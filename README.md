@@ -15,4 +15,14 @@ allele 2, the last deme with allele 2, (5) The last deme fully occupied by allel
 (7) The number of demes fully occupied by allele 2, (8) The total number of allele 2.
 The second row for each trial gives 1 or 0 depending whether allele 2 is fixed or extinct. 
 ### Comments:
-Needs gsl to run (uses the random functions). Loads a precalculated density profile of the focal allele from the output of eq.c
+Needs gsl to run (uses the random functions). Loads a precalculated density profile of the focal allele from the output of eq.c. It is a single sample from the discrete distribution generated from eq.c
+
+## eq.c:
+### Input:
+trails: the number of trials the simulation will run, foc_loc: initial location of the focal allele, wrap: whether periodic bc or not, mig: rate of migration, N: number of inds in a deme, s2: the fitness of the focal allele, r: recombination rate, output: Name of the output file.
+### Output:
+For each succesful trail the output file has a row. The first term in the row is first index with non zero focal allele occupancy. The next terms are the focal allele occupancies on each site in serial order. 
+
+### Comments:
+The ouput file is then loaded to a 2d vector in waves.cpp. Then a density profile is sampled for waves.cpp to run.
+Notice the number of rows in the output is much smaller than the number of trails as the probability to not go extinct is ~2*s2
