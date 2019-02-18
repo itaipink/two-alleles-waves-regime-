@@ -15,4 +15,4 @@ allele 2, the last deme with allele 2, (5) The last deme fully occupied by allel
 (7) The number of demes fully occupied by allele 2, (8) The total number of allele 2.
 The second row for each trial gives 1 or 0 depending whether allele 2 is fixed or extinct. 
 ### Comments:
-Needs gsl to run (uses the random functions). Loads a precalculated density profile of the focal allele 
+Needs gsl to run (uses the random functions). Loads a precalculated density profile of the focal allele from the output of eq.c
